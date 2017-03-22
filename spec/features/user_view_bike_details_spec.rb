@@ -13,6 +13,9 @@ require 'rails_helper'
       expect(page).to have_content(advertisement.title)
       expect(page).to have_content(advertisement.address)
       expect(page).to have_content(advertisement.bike.use_for)
+      expect(page).to have_content(advertisement.owner)
+      expect(page).to have_content(advertisement.phone)
+
 
       click_on 'Voltar'
   end

@@ -4,6 +4,6 @@ FactoryGirl.define do
     weel_size '26'
     condition 'Nova'
     category 'Adulto'
-    use_for 'Passeio'
+    use_for 'Trilha'
   end
 end

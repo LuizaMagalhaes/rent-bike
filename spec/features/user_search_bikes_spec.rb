@@ -3,13 +3,14 @@ require "rails_helper"
 feature 'User Search For Bicicles' do
   scenario 'successfully' do
     bike = create(:bike, color: 'azul')
+    advertisement = create(:advertisement, bike: bike)
 
     visit root_path
 
-
-    expect(page).to have_css('h2', text: bike.use_for)
-    expect(page).to have_link(bike.use_for)
-    expect(page).to have_content(bike.category)
+    expect(page).to have_css('h2', text: advertisement.title)
+    expect(page).to have_content(advertisement.address)
+    expect(page).to have_content(advertisement.bike.use_for)
+    expect(page).to have_content(advertisement.bike.category)
 
   end
 end

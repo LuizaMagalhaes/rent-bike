@@ -9,10 +9,10 @@ require 'rails_helper'
       visit root_path
       click_on advertisement.title
 
-      expect(current_path).to eq advertisement_path
+      expect(current_path).to eq advertisement_path(advertisement)
       expect(page).to have_content(advertisement.title)
       expect(page).to have_content(advertisement.address)
-      expect(page).to have_content(advertisement.bike)
+      expect(page).to have_content(advertisement.bike.use_for)
 
       click_on 'Voltar'
   end

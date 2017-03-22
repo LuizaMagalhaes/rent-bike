@@ -2,5 +2,8 @@
 <div id="bikes">
 <% @advertisements.each do |ad| %>
   <h2><%= link_to ad.title, ad %></h2>
+    <%= ad.address %>
+    <%= ad.bike.use_for %>
+    <%= ad.bike.category %>
 <% end %>
 </div>

@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :advertisement do
-    title 'Bicileta Novinha'
+    title 'Bicileta para trilha'
     address 'Alameda Santos, 1234 - Bela Vista'
     bike
-    price "9.99"
+    price "19.99"
   end
 end

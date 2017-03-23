@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root to: 'bikes#index'
 
-  resources :bike, only: [:show]
-  resources :advertisements, only: [:show]
-
+  resources :advertisements, only: [:show] do
+    resources :bikes, only: [:show]
+    resources :rents, only: [:new, :create]
+  end
 end

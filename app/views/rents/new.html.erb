@@ -1,0 +1,24 @@
+<h1>Realize o cadastro abaixo para confimar o aluguel da bike</h1>
+
+<%= form_for [@advertisement, @rent] do |f| %>
+  Customer:
+    <%= f.fields_for :customer do |customer_form| %>
+
+      <%= customer_form.label :name, 'Nome:' %>
+      <%= customer_form.text_field :name %>
+
+      <%= customer_form.label :phone, 'Telefone:' %>
+      <%= customer_form.text_field :phone %>
+
+      <%= customer_form.label :cpf, 'CPF:' %>
+      <%= customer_form.text_field :cpf %>
+
+      <%= customer_form.label :payment, 'Pagamento:' %>
+      <%= customer_form.text_field :payment %>
+
+      <%= customer_form.label :email, 'E-mail:' %>
+      <%= customer_form.text_field :email %>
+
+    <% end %>
+  <%= f.submit 'Confirmar Aluguel' %>
+<% end %>

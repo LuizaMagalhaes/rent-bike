@@ -3,5 +3,5 @@
 <%= @bike.use_for %>
 <%= @advertisement.owner %>
 <%= @advertisement.phone %>
-
+<%= link_to 'Alugar Bike', new_advertisement_rent_path(@advertisement) %>
 <%= link_to 'Voltar', root_path(@advertisement) %>

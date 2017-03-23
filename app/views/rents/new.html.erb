@@ -13,12 +13,16 @@
       <%= customer_form.label :cpf, 'CPF:' %>
       <%= customer_form.text_field :cpf %>
 
-      <%= customer_form.label :payment, 'Pagamento:' %>
-      <%= customer_form.text_field :payment %>
-
       <%= customer_form.label :email, 'E-mail:' %>
       <%= customer_form.text_field :email %>
 
     <% end %>
+
+    <%= f.label :payment, 'Pagamento:' %>
+    <%= f.text_field :payment %>
+
+    <%= f.label :rent_date, 'Data do Aluguel:' %>
+    <%= f.text_field :rent_date %>
+
   <%= f.submit 'Confirmar Aluguel' %>
 <% end %>

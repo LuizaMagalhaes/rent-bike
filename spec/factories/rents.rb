@@ -1,7 +1,8 @@
 FactoryGirl.define do
   factory :rent do
-    customer nil
-    advertisement nil
-    price "9.99"
+    customer
+    advertisement
+    payment 'Dinheiro'
+    rent_date '10 de abril'
   end
 end

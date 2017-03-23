@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   resources :advertisements, only: [:show] do
     resources :bikes, only: [:show]
-    resources :rents, only: [:new, :create]
+    resources :rents, only: [:new, :create, :show]
   end
 end

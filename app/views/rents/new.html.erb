@@ -1,7 +1,7 @@
 <h1>Realize o cadastro abaixo para confimar o aluguel da bike</h1>
 
 <%= form_for [@advertisement, @rent] do |f| %>
-  Customer:
+  <h2>Cliente</h2>
     <%= f.fields_for :customer do |customer_form| %>
 
       <%= customer_form.label :name, 'Nome:' %>

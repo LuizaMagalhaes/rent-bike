@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'User rents a bike' do
   scenario 'successfully' do
     bike = create(:bike)
-    advertisement = create(:advertisement, bike: bike, price: 10)
+    advertisement = create(:advertisement, bike: bike)
     customer = build(:customer)
     rent = build(:rent, customer: customer, payment: 'Dinheiro', rent_date:'29/04/17')
 

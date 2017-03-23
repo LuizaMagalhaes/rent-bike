@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+bike = Bike.create([{color: 'azul', weel_size: 'aro 26', condition: 'nova',
+  category: 'adulto', use_for:'passeio'}])
+Advertisement.create(title: 'bicicleta de passeio', price: 14.9, 
+    address:'rua pamplona, 345', owner: 'Alan Baptista',
+    phone: '93849843', bike: bike.first)

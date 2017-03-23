@@ -5,5 +5,6 @@ FactoryGirl.define do
     bike
     owner 'Cladia Raia'
     phone '(11)998877665'
+    price 16.9
   end
 end

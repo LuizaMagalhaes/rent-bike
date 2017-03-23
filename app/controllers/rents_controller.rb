@@ -9,14 +9,14 @@ class RentsController < ApplicationController
     @advertisement = Advertisement.find(params[:advertisement_id])
     rent = @advertisement.rents.create(rent_params)
     rent.price = @advertisement.price
-    flash[:success] = "Aluguel Confirmado por #{rent_params[:price]}
-    #{rent_params[:payment]},
-    na data #{rent_params[:rent_date]}, pelo cliente
-    #{rent_params[:customer_attributes][:name]}
-    telefone #{rent_params[:customer_attributes][:phone]}
-    #{rent_params[:customer_attributes][:cpf]}
-    #{rent_params[:customer_attributes][:email]}"
+    rent.save
+    flash[:success] = "Aluguel Confirmado por R$ #{rent.price},
+    na data #{rent.rent_date}"
     redirect_to [@advertisement, rent]
+  end
+
+  def show
+    @rent = Rent.find(params[:id])
   end
 
   private

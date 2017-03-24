@@ -29,6 +29,7 @@ group :development, :test do
   gem 'capybara'
   gem 'simplecov', :require => false, :group => :test
   gem 'pry'
+  gem 'launchy'
   gem 'factory_girl_rails'
 end
 

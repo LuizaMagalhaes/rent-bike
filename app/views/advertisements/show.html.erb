@@ -1,9 +1,9 @@
 <%=flash[:error]%>
-<%= @advertisement.title %> <br>
-<%= @advertisement.address %><br>
-<%= @bike.use_for %><br>
-<%= @advertisement.owner %><br>
-<%= @advertisement.phone %><br>
-<%= @advertisement.price %><br>
+<h2><%= @advertisement.title %></h2> <br>
+Endereço: <%= @advertisement.address %><br>
+Principal uso: <%= @bike.use_for %><br>
+Dono(a): <%= @advertisement.owner %><br>
+Contato: <%= @advertisement.phone %><br>
+Preço: <%= @advertisement.price %><br>
 <%= link_to 'Alugar Bike', new_advertisement_rent_path(@advertisement) %>
 <%= link_to 'Voltar', root_path(@advertisement) %>

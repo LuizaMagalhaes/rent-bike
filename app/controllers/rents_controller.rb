@@ -23,7 +23,7 @@ class RentsController < ApplicationController
       na data #{rent.rent_date}"
       redirect_to [@advertisement, rent]
     else
-      flash[:error] = "Ops... Essa bike já está alugada no dia #{rent_date} :("
+      flash[:error] = "Ops... Essa bike já está alugada no dia #{rent.rent_date} :("
       redirect_to @advertisement
     end
   end

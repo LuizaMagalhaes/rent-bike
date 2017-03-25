@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170323201507) do
+ActiveRecord::Schema.define(version: 20170324231852) do
 
   create_table "advertisements", force: :cascade do |t|
     t.string   "title"
@@ -48,9 +48,9 @@ ActiveRecord::Schema.define(version: 20170323201507) do
     t.integer  "advertisement_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.string   "rent_date"
     t.string   "payment"
     t.decimal  "price"
+    t.date     "rent_date"
     t.index ["advertisement_id"], name: "index_rents_on_advertisement_id"
     t.index ["customer_id"], name: "index_rents_on_customer_id"
   end

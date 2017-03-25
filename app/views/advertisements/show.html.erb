@@ -5,6 +5,8 @@ Principal uso: <%= @bike.use_for %><br>
 Dono(a): <%= @advertisement.owner %><br>
 Contato: <%= @advertisement.phone %><br>
 Preço: <%= @advertisement.price %><br>
-
+<% @availabilities.each do |availability| %>
+  <p><%= l availability %></p>
+<% end %>
 <%= link_to 'Alugar Bike', new_advertisement_rent_path(@advertisement) %>
 <%= link_to 'Voltar', root_path(@advertisement) %>

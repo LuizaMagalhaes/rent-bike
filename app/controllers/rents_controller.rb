@@ -20,10 +20,10 @@ class RentsController < ApplicationController
       rent.price = @advertisement.price
       rent.save
       flash[:success] = "Aluguel Confirmado por R$ #{rent.price},
-      na data #{rent.rent_date}"
+      na data #{l rent.rent_date}"
       redirect_to [@advertisement, rent]
     else
-      flash[:error] = "Ops... Essa bike já está alugada no dia #{rent.rent_date} :("
+      flash[:error] = "Ops... Essa bike já está alugada no dia #{rent_date} :("
       redirect_to @advertisement
     end
   end

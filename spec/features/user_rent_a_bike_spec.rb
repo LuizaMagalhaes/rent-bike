@@ -34,9 +34,11 @@ feature 'User rents a bike' do
 
     bike = create(:bike)
     customer = create(:customer)
-    another_customer = create(:customer, name: 'Joao', phone: '999888777', cpf: '987654311')
+    another_customer = create(:customer, name: 'Joao', phone: '999888777',
+                              cpf: '987654311')
     ad = create(:advertisement, bike: bike)
-    rent = create(:rent, advertisement: ad, customer: customer, rent_date: '20/04/2017')
+    rent = create(:rent, advertisement: ad, customer: customer,
+                  rent_date: '20/04/2017')
 
     visit root_path
     click_on ad.title
@@ -51,7 +53,7 @@ feature 'User rents a bike' do
 
 
     click_on 'Confirmar Aluguel'
-    
+
     expect(page).to have_content 'Ops... Essa bike já está alugada no dia 20/04/2017 :('
   end
 end

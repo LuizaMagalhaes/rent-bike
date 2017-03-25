@@ -2,10 +2,9 @@ class AdvertisementsController < ApplicationController
   def show
     @advertisement = Advertisement.find(params[:id])
     @bike = Bike.find(params[:id])
-    @availability = ""
-    7.times do |day|
-      @availability += "#{day + Time.zone.today.day} "
+    @availabilities = 7.times.map do |n|
+      Time.zone.today + n.day
     end
-    @availability += "/#{Time.zone.today.month}/#{Time.zone.today.year}"
+    @availabilities -= @advertisement.rents.pluck(:rent_date)
   end
 end

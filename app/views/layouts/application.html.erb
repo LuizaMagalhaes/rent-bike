@@ -13,11 +13,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
-  <body>
-<h1>RentBike</h1>
-    <%= yield %>
-    <body>
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -84,16 +79,8 @@
     <div class="col-sm-4">
       <img src="http://www.caloi.com/userfiles/bikes/fotos/t1_arquivo_20150611145843.jpg" class="img-responsive" style="width:100%" alt="Image">
 
-    <div id="ads">
-    <% @advertisements.each do |ad| %>
-    <h2><%= link_to ad.title, ad %></h2>
-      <%= ad.address %>
-      <%= ad.bike.use_for %>
-      <%= ad.bike.category %>
-    <% end %>
-    </div>
-
-
+    <%=yield%>
+    
     </div>
     <div class="col-sm-4"> 
       <img src="http://www.nucleobike.com.br/wp-content/uploads/2015/06/bicicleta-speed.jpg" class="img-responsive" style="width:100%" alt="Image">

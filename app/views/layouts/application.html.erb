@@ -30,7 +30,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="/">Home</a></li>
         <li><a href="#">Bikes</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
@@ -51,7 +51,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="https://68.media.tumblr.com/40c98b373945bca403922979eb55f7bb/tumblr_n0wydmLCsy1r475gko1_500.jpg" alt="Image">
+        <img src="https://secure.static.tumblr.com/17c8118cb3bdd88d8250c99bd5be3f63/t2i7ris/htao8obvp/tumblr_static_tumblr_static__640.jpg" alt="Image">
         <div class="carousel-caption">
           <h3>#VouDeBike</h3>
           <p>Alugue já a sua!</p>
@@ -83,7 +83,17 @@
   <div class="row">
     <div class="col-sm-4">
       <img src="http://www.caloi.com/userfiles/bikes/fotos/t1_arquivo_20150611145843.jpg" class="img-responsive" style="width:100%" alt="Image">
-      <p>Bike de passeio</p>
+
+    <div id="ads">
+    <% @advertisements.each do |ad| %>
+    <h2><%= link_to ad.title, ad %></h2>
+      <%= ad.address %>
+      <%= ad.bike.use_for %>
+      <%= ad.bike.category %>
+    <% end %>
+    </div>
+
+
     </div>
     <div class="col-sm-4"> 
       <img src="http://www.nucleobike.com.br/wp-content/uploads/2015/06/bicicleta-speed.jpg" class="img-responsive" style="width:100%" alt="Image">
@@ -100,7 +110,7 @@
   </div>
 </div><br>
 <footer class="container-fluid text-center">
-  <p>RentBike by Luiza Magalhães/CampuCode</p>
+  <p>RentBike by Luiza Magalhães/CampusCode</p>
 </footer>
   </body>
 </html>

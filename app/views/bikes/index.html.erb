@@ -1,8 +1,28 @@
-<div id="ads">
-<% @advertisements.each do |ad| %>
-  <%= link_to ad.title, ad %>
-    <%= ad.address %>
-    <%= ad.bike.use_for %>
-    <%= ad.bike.category %>
+<% content_for :top_content do %>
+  <%= render 'carousel' %>
 <% end %>
+
+<h3>Bikes disponíveis</h3><br>
+<div class="row">
+  <% @advertisements.each do |ad| %>
+    <div class="col-sm-4">
+      <img src="http://www.caloi.com/userfiles/bikes/fotos/t1_arquivo_20150611145843.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <%= link_to ad.title, ad %>
+      <p><%= ad.address %></p>
+      <%= ad.bike.use_for %>
+      <%= ad.bike.category %>
+    </div >
+  <% end %>
+  <div class="col-sm-4">
+    <div class="well">
+     <p>Aqui no RentBike tu pode alugar sua bike ou alugar uma para dar umavolta pela cidade ou até mesmo fazer uma trilha! </p>
+    </div>
+    <div class="well">
+     <p>Aqui suas possibilidades são infinitas...</p>
+    </div>
+  </div>
+</div>
+
+<div id="ads">
+
 </div>

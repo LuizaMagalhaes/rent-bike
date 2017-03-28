@@ -4,4 +4,8 @@ pt-BR:
       customer: Cliente
     attributes:
       customer:
+        name: "Nome"
+        phone: "Telefone"
+        cpf: "CPF"
+        email: "Email"
         password: "Senha"

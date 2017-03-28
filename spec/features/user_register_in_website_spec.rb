@@ -28,5 +28,25 @@ feature 'User register in website' do
         expect(page).to have_link('Login')
     end
 
-    scenario ''
+    scenario 'user create new account' do
+      customer = build(:customer)
+
+      visit root_path
+      click_on 'Login'
+      click_on 'Sign up'
+
+      fill_in 'Email',              with: customer.email
+      fill_in 'Senha',              with: customer.password
+      fill_in 'Confirme sua senha', with: customer.password
+      fill_in 'Nome',               with: customer.name
+      fill_in 'CPF',                with: customer.cpf
+      fill_in 'Telefone',           with: customer.phone
+
+      click_on 'Cadastrar'
+
+      expect(page).to have_content "Olá, #{customer.name}"
+      expect(current_path).to eq root_path
+
+    end
+>>>>>>> devise
 end

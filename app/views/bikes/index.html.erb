@@ -7,10 +7,10 @@
   <% @advertisements.each do |ad| %>
     <div class="col-sm-4">
       <img src="http://www.caloi.com/userfiles/bikes/fotos/t1_arquivo_20150611145843.jpg" class="img-responsive" style="width:100%" alt="Image">
-      <%= link_to ad.title, ad %>
-      <p><%= ad.address %></p>
-      <%= ad.bike.use_for %>
-      <%= ad.bike.category %>
+      <h4><%= link_to ad.title, ad %></h4>
+      <b>Endereço:</b> <%= ad.address %><br>
+      <b>Principal uso:</b> <%= ad.bike.use_for %> <br>
+      <b>Categoria:</b> <%= ad.bike.category %>
     </div >
   <% end %>
   <div class="col-sm-4">

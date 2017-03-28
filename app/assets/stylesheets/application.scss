@@ -11,17 +11,23 @@
     }
 
   .carousel-inner img {
-      width: 75%;
+      width: 50%;
       margin: auto;
       min-height:100px;
   }
 
   @media (max-width: 600px) {
     .carousel-caption {
-      display: none;
+      display: flex;
+      max-height: 100px;
+    
     }
   }
   .name-login{
   background-color: #cc0099;
   font-family: sans-serif;
 }
+
+  .logout{
+    background-color: pink;
+  }

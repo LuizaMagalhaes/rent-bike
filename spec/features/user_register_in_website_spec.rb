@@ -25,7 +25,8 @@ feature 'User register in website' do
         visit root_path
         click_on 'Logout'
 
-
         expect(page).to have_link('Login')
     end
+
+    scenario ''
 end

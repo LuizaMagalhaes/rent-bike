@@ -18,5 +18,14 @@ feature 'User register in website' do
       expect(current_path).to eq new_advertisement_rent_path(advertisement)
     end
 
+    scenario 'logout' do
+        customer = create(:customer)
 
+        login_as(customer)
+        visit root_path
+        click_on 'Logout'
+
+
+        expect(page).to have_link('Login')
+    end
 end

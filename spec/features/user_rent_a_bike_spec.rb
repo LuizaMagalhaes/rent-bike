@@ -42,6 +42,7 @@ feature 'User rents a bike' do
     ad = create(:advertisement, bike: bike)
     rent = create(:rent, advertisement: ad, customer: customer,
                   rent_date: '20/04/2017')
+
     login_as(customer)              
     visit root_path
     click_on ad.title

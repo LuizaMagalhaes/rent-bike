@@ -32,6 +32,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if customer_signed_in?%>
           <li><span class="glyphicon glyphicon-log-in"></span><%="Olá, #{current_customer.name}"%></li>
+          <li><span class="glyphicon "><%= link_to 'Logout', destroy_customer_session_path, method: :delete %>"></span></li>
         <% else %>
           <li><a href="<%= new_customer_session_path %>"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
         <% end %>

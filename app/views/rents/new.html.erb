@@ -2,22 +2,7 @@
 
 <%= form_for [@advertisement, @rent] do |f| %>
   <h4>Cliente</h4>
-    <%= f.fields_for :customer do |customer_form| %>
-
-      <%= customer_form.label :name, 'Nome:' %>
-      <%= customer_form.text_field :name %>
-
-      <%= customer_form.label :phone, 'Telefone:' %>
-      <%= customer_form.text_field :phone %>
-
-      <%= customer_form.label :cpf, 'CPF:' %>
-      <%= customer_form.text_field :cpf %>
-
-      <%= customer_form.label :email, 'E-mail:' %>
-      <%= customer_form.text_field :email %>
-
-    <% end %>
-
+      
     <%= f.label :payment, 'Pagamento:' %>
     <%= f.text_field :payment %>
 

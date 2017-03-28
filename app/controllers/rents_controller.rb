@@ -1,4 +1,6 @@
 class RentsController < ApplicationController
+  before_action :authenticate_customer!
+
   def new
     @advertisement = Advertisement.find(params[:advertisement_id])
     @rent = Rent.new
@@ -18,7 +20,9 @@ class RentsController < ApplicationController
     unless rented
       rent = @advertisement.rents.create(rent_params)
       rent.price = @advertisement.price
+      rent.customer = current_customer
       rent.save
+
       flash[:success] = "Aluguel Confirmado por R$ #{rent.price},
       na data #{l rent.rent_date}"
       redirect_to [@advertisement, rent]

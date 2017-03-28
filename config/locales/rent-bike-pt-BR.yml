@@ -1,0 +1,7 @@
+pt-BR:
+  activerecord:
+    models:
+      customer: Cliente
+    attributes:
+      customer:
+        password: "Senha"

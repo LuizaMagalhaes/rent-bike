@@ -7,7 +7,7 @@ feature 'User Search For Bicicles' do
 
     visit root_path
 
-    expect(page).to have_css('h2', text: advertisement.title)
+    expect(page).to have_content(advertisement.title)
     expect(page).to have_content(advertisement.address)
     expect(page).to have_content(advertisement.bike.use_for)
     expect(page).to have_content(advertisement.bike.category)

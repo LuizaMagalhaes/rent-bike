@@ -4,20 +4,23 @@ feature 'User rents a bike' do
   scenario 'successfully' do
     bike = create(:bike)
     advertisement = create(:advertisement, bike: bike)
-    customer = build(:customer)
+    customer = create(:customer)
 
     visit root_path
+
+    click_on 'Login'
+
+    fill_in 'Email', with: customer.email
+    fill_in 'Senha', with: customer.password
+
+    click_on 'Entrar'
+
     click_on advertisement.title
 
     click_on 'Alugar Bike'
 
-    fill_in 'Nome',             with: customer.name
-    fill_in 'Telefone',         with: customer.phone
-    fill_in 'CPF',              with: customer.cpf
-    fill_in 'E-mail',           with: customer.email
     fill_in 'Pagamento',        with: 'Dinheiro'
     fill_in 'Data do Aluguel',  with: '01/01/2017'
-
 
     click_on 'Confirmar Aluguel'
 
@@ -35,22 +38,17 @@ feature 'User rents a bike' do
     bike = create(:bike)
     customer = create(:customer)
     another_customer = create(:customer, name: 'Joao', phone: '999888777',
-                              cpf: '987654311')
+                              cpf: '987654311', email:'joao@gmail.com')
     ad = create(:advertisement, bike: bike)
     rent = create(:rent, advertisement: ad, customer: customer,
                   rent_date: '20/04/2017')
-
+    login_as(customer)              
     visit root_path
     click_on ad.title
     click_on 'Alugar Bike'
 
-    fill_in 'Nome',             with: customer.name
-    fill_in 'Telefone',         with: customer.phone
-    fill_in 'CPF',              with: customer.cpf
-    fill_in 'E-mail',           with: customer.email
     fill_in 'Pagamento',        with: 'Dinheiro'
     fill_in 'Data do Aluguel',  with: '20/04/2017'
-
 
     click_on 'Confirmar Aluguel'
 

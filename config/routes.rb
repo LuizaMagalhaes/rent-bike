@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :customers
   root to: 'bikes#index'
 
   resources :advertisements, only: [:show] do

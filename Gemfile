@@ -18,6 +18,7 @@ gem "paperclip", "~> 5.0.0"
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platform: :mri

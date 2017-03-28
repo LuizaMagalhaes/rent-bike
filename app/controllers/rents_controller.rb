@@ -39,7 +39,6 @@ class RentsController < ApplicationController
   private
 
   def rent_params
-    params.require(:rent).permit(:rent_date, :payment,
-    customer_attributes: [:name, :phone, :cpf, :email, :id, :_destroy])
+    params.require(:rent).permit(:rent_date, :payment)
   end
 end

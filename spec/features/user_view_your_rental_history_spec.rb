@@ -18,10 +18,10 @@ feature 'User views your rental history' do
     expect(page).to have_content(advertisement.owner,   count: 2)
     expect(page).to have_content(bike.category,         count: 2)
     expect(page).to have_content(bike.weel_size,        count: 2)
-    expect(page).to have_content(rent.rent_date)
-    expect(page).to have_content(rent.price)
-    expect(page).to have_content(other_rent.rent_date)
-    expect(page).to have_content(other_rent.price)
+    expect(page).to have_content(I18n.l rent.rent_date)
+    expect(page).to have_content("R$ 14,90")
+    expect(page).to have_content(I18n.l other_rent.rent_date)
+    expect(page).to have_content("R$ 19,90")
 
   end
 
@@ -45,8 +45,8 @@ feature 'User views your rental history' do
     expect(page).to have_content(advertisement.owner)
     expect(page).to have_content(bike.category)
     expect(page).to have_content(bike.weel_size)
-    expect(page).to have_content(rent.rent_date)
-    expect(page).to have_content(rent.price)
+    expect(page).to have_content(I18n.l rent.rent_date)
+    expect(page).to have_content("R$ 14,90")
     expect(page).not_to have_content another_bike.color
     expect(page).not_to have_content another_rent.rent_date
   end

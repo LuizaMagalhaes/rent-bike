@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-03-28T21:56:14-03:00">2017-03-28T21:56:14-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-03-29T17:09:49-03:00">2017-03-29T17:09:49-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.64
+         1.63
        </span>
     </span> hits/line)
   </h2>
@@ -77,7 +77,7 @@
         <td>4</td>
         <td>4</td>
         <td>0</td>
-        <td>7.0</td>
+        <td>6.5</td>
       </tr>
       
       <tr>
@@ -143,7 +143,7 @@
       <tr>
         <td class="strong"><a href="#d846b802f7b1cc18316ed6ad1e6c5e4d01120b0e" class="src_link" title="spec/features/user_view_bike_details_spec.rb">spec/features/user_view_bike_details_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>22</td>
+        <td>21</td>
         <td>14</td>
         <td>14</td>
         <td>0</td>
@@ -386,14 +386,14 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="3">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="12" data-linenumber="3">
+          <span class="hits">12</span>
           
           <code class="ruby">    @advertisements = Advertisement.all</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="4">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="12" data-linenumber="4">
+          <span class="hits">12</span>
           
           <code class="ruby">    @bikes = Bike.all</code>
         </li>
@@ -1466,10 +1466,10 @@
           <code class="ruby">      expect(page).to have_content(advertisement.phone)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">      expect(page).to have_xpath(&quot;//img[contains(@src,&#39;#{bike.photo_url}&#39;)]&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
@@ -1478,19 +1478,13 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      click_on &#39;Voltar&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">end</code>

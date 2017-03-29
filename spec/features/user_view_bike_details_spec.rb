@@ -15,8 +15,7 @@ require 'rails_helper'
       expect(page).to have_content(advertisement.bike.use_for)
       expect(page).to have_content(advertisement.owner)
       expect(page).to have_content(advertisement.phone)
+      expect(page).to have_xpath("//img[contains(@src,'#{bike.photo_url}')]")
 
-
-      click_on 'Voltar'
   end
 end

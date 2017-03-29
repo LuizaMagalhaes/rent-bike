@@ -1,28 +1,17 @@
-<% content_for :top_content do %>
-  <%= render 'carousel' %>
-<% end %>
-
+<div class="jumbotron">
+  <h1>Rent Bike!</h1>
+  <p>RentBike é uma aplicação que aproxima quem quer alugar uma bicicleta de quem tem um para alugar.
+  Sempre pensando na proximidade dessas duas pessoas e na facilidade para que essa neogociação seja feita!</p>
+</div>
 <h3>Bikes disponíveis</h3><br>
 <div class="row">
   <% @advertisements.each do |ad| %>
     <div class="col-sm-4">
-      <img src="http://www.caloi.com/userfiles/bikes/fotos/t1_arquivo_20150611145843.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <img src="<%= ad.bike.photo_url %>" class="img-responsive" style="width:100%" alt="Image">
       <h4><%= link_to ad.title, ad %></h4>
       <b>Endereço:</b> <%= ad.address %><br>
       <b>Principal uso:</b> <%= ad.bike.use_for %> <br>
       <b>Categoria:</b> <%= ad.bike.category %>
     </div >
   <% end %>
-  <div class="col-sm-4">
-    <div class="well">
-     <p>Aqui no RentBike tu pode alugar sua bike ou alugar uma para dar umavolta pela cidade ou até mesmo fazer uma trilha! </p>
-    </div>
-    <div class="well">
-     <p>Aqui suas possibilidades são infinitas...</p>
-    </div>
-  </div>
-</div>
-
-<div id="ads">
-
 </div>

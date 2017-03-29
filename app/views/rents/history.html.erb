@@ -1,10 +1,16 @@
-<%= flash[:error] %>
 
+<h1> Meus Alugueis</h1>
 <% @rents.each do |r| %>
-<%= r.advertisement.bike.use_for %>
-<%= r.advertisement.owner %>
-<%= r.advertisement.bike.category %>
-<%= r.advertisement.bike.weel_size %>
-<%= r.rent_date %>
-<%= r.price %>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <%= l r.rent_date %> - <%= r.advertisement.bike.category %>
+    </div>
+    <div class= "panel-body">
+      <dl>
+    <dt> Principal uso:</dt><dd><%= r.advertisement.bike.use_for %></dd>
+    <dt> Dono(a):</dt><dd><%= r.advertisement.owner %></dd>
+    <dt>Aro:</dt><dd><%= r.advertisement.bike.weel_size %></dd>
+    <dt>Preço:</dt><dd><%= number_to_currency r.price %></dd>
+    </div>
+  </div>
 <% end %>

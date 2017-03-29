@@ -97,9 +97,8 @@
         1,
         1,
         1,
-        null,
-        null,
         1,
+        null,
         null,
         null
       ],
@@ -321,12 +320,12 @@
       "/Users/campuscode6/workspace/rent-bike/app/controllers/bikes_controller.rb": [
         1,
         1,
-        13,
-        13,
+        12,
+        12,
         null,
         null
       ]
     },
-    "timestamp": 1490748974
+    "timestamp": 1490818189
   }
 }

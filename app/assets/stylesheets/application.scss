@@ -1,34 +1,48 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
+body{
+  padding-top: 50px;
 
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
+  main {
+    min-height: 80vh;
+  }
+  #warnings{
+    .panel {
+      margin: 20px;
     }
-
-  .carousel-inner img {
-      width: 50%;
-      margin: auto;
-      min-height:100px;
   }
 
-  @media (max-width: 600px) {
-    .carousel-caption {
-      display: flex;
-      max-height: 100px;
-
-    }
+  .bike-available{
+    border: solid 1px #049372;
+    border-radius: 3px;
+    background-color: #26C281;
+    color: #fff;
+    padding: 10px;
+    margin: 10px;
   }
-  .name-login{
+}
+
+footer {
+  background-color: #008080;
+  padding: 25px;
+  color: #fff;
+  
+}
+
+.carousel-inner img {
+  width: 50%;
+  margin: auto;
+  min-height:100px;
+}
+
+@media (max-width: 600px) {
+  .carousel-caption {
+    display: flex;
+    max-height: 100px;
+  }
+}
+.name-login{
   background-color: #cc0099;
   font-family: sans-serif;
 }
-
-  .logout{
-    background-color: pink;
-  }

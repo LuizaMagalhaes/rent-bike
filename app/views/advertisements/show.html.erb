@@ -1,14 +1,28 @@
-<%=flash[:error]%>
-<%= @advertisement.title %><br>
-<div id= bike>
-Endereço: <%= @advertisement.address %><br>
-Principal uso: <%= @bike.use_for %><br>
-Dono(a): <%= @advertisement.owner %><br>
-Contato: <%= @advertisement.phone %><br>
-Preço: <%= @advertisement.price %><br>
-<% @availabilities.each do |availability| %>
-  <p><%= l availability %></p>
-<% end %>
+<div class="row">
+  <h1><%= @advertisement.title %></h1>
+  <div class="col-md-4 text-center">
+    <img src= '<%= @bike.photo_url %>' class="img-responsive"><br>
+    <%= link_to 'Alugar Bike', new_advertisement_rent_path(@advertisement), class: 'btn btn-primary btn-lg' %>
+  </div>
+  <div class="col-md-8">
+    <dl class="dl-horizontal">
+      <dt>Endereço</dt>
+      <dd><%= @advertisement.address %></dd>
+      <dt>Principal uso</dt>
+      <dd><%= @bike.use_for %></dd>
+      <dt> Dono(a)</dt>
+      <dd><%= @advertisement.owner %></dd>
+      <dt>Contato</dt>
+      <dd><%= @advertisement.phone %></dd>
+      <dt>Preço</dt>
+      <dd><%= number_to_currency @advertisement.price %></dd>
+    </dl>
+    <h3>Disponibilidade</h3>
+    <div class="row">
+      <% @availabilities.each do |availability| %>
+        <div class="col-md-2 bike-available text-center"><%= l availability %></div>
+      <% end %>
+    </div>
+
+  </div>
 </div>
-<%= link_to 'Alugar Bike', new_advertisement_rent_path(@advertisement) %>
-<%= link_to 'Voltar', root_path(@advertisement) %>

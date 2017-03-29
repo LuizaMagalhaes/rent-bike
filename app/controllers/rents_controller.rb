@@ -36,6 +36,14 @@ class RentsController < ApplicationController
     @rent = Rent.find(params[:id])
   end
 
+  def history
+    @rents = current_customer.rents
+
+    if @rents.empty?
+      flash[:error] = "Ops... voce ainda não alugou nenhuma  bike :("
+    end
+  end
+
   private
 
   def rent_params

@@ -1,0 +1,10 @@
+<%= flash[:error] %>
+
+<% @rents.each do |r| %>
+<%= r.advertisement.bike.use_for %>
+<%= r.advertisement.owner %>
+<%= r.advertisement.bike.category %>
+<%= r.advertisement.bike.weel_size %>
+<%= r.rent_date %>
+<%= r.price %>
+<% end %>

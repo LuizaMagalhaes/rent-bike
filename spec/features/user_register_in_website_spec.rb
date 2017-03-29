@@ -48,5 +48,4 @@ feature 'User register in website' do
       expect(current_path).to eq root_path
 
     end
->>>>>>> devise
 end

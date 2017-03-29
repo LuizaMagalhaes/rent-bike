@@ -6,4 +6,6 @@ Rails.application.routes.draw do
     resources :bikes, only: [:show]
     resources :rents, only: [:new, :create, :show]
   end
+
+  get 'history', to: 'rents#history', as: 'history'
 end

@@ -12,7 +12,7 @@ class RentsController < ApplicationController
     rent_date = params[:rent][:rent_date]
     rented = false
     @advertisement.rents.each do |rent|
-      if rent.rent_date = rent_date
+      if rent.rent_date == Date.parse(rent_date)
         rented = true
       end
     end

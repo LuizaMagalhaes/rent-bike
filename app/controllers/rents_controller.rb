@@ -9,8 +9,9 @@ class RentsController < ApplicationController
 
   def create
     @advertisement = Advertisement.find(params[:advertisement_id])
-    rent_date = params[:rent][:rent_date]
+    rent_date = rent_params[:rent_date]
     rented = false
+
     @advertisement.rents.each do |rent|
       if rent.rent_date == Date.parse(rent_date)
         rented = true
@@ -18,13 +19,12 @@ class RentsController < ApplicationController
     end
 
     unless rented
-      rent = @advertisement.rents.create(rent_params)
+      rent = @advertisement.rents.build(rent_params)
       rent.price = @advertisement.price
       rent.customer = current_customer
       rent.save
 
-      flash[:success] = "Aluguel Confirmado por R$ #{rent.price},
-      na data #{l rent.rent_date}"
+      flash[:success] = "Aluguel Confirmado por R$ #{rent.price}, na data #{l rent.rent_date}"
       redirect_to [@advertisement, rent]
     else
       flash[:error] = "Ops... Essa bike já está alugada no dia #{rent_date} :("
@@ -42,6 +42,12 @@ class RentsController < ApplicationController
     if @rents.empty?
       flash[:error] = "Ops... voce ainda não alugou nenhuma  bike :("
     end
+  end
+
+  def checkout
+    @advertisement = Advertisement.find(params[:id])
+    @rent = Rent.new(payment: rent_params[:payment], rent_date: rent_params[:rent_date])
+    @rent.customer = current_customer
   end
 
   private

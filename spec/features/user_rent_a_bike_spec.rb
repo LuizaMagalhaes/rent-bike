@@ -17,14 +17,14 @@ feature 'User rents a bike' do
 
     click_on advertisement.title
 
-    click_on 'Alugar Bike'
+    click_on 'Alugar'
 
     fill_in 'Pagamento',        with: 'Dinheiro'
     fill_in 'Data do Aluguel',  with: '01/01/2017'
 
-    click_on 'Confirmar Aluguel'
+    click_on 'Alugar Bike'
 
-    expect(page).to have_content('Aluguel Confirmado por')
+    expect(page).to have_content('Detalhes do aluguel')
     expect(page).to have_content 'Dinheiro'
     expect(page).to have_content '01/01/2017'
     expect(page).to have_content customer.name
@@ -34,25 +34,31 @@ feature 'User rents a bike' do
   end
 
   scenario 'bike already rented' do
-
     bike = create(:bike)
     customer = create(:customer)
     another_customer = create(:customer, name: 'Joao', phone: '999888777',
                               cpf: '987654311', email:'joao@gmail.com')
+
     ad = create(:advertisement, bike: bike)
+
     rent = create(:rent, advertisement: ad, customer: customer,
                   rent_date: '20/04/2017')
 
-    login_as(customer)              
+    login_as(customer)
+
     visit root_path
+
     click_on ad.title
-    click_on 'Alugar Bike'
+
+    click_on 'Alugar'
 
     fill_in 'Pagamento',        with: 'Dinheiro'
     fill_in 'Data do Aluguel',  with: '20/04/2017'
 
-    click_on 'Confirmar Aluguel'
+    click_on 'Alugar Bike' 
 
-    expect(page).to have_content 'Ops... Essa bike já está alugada no dia 20/04/2017 :('
+    click_on 'Confirmar aluguel'
+
+    expect(page).to have_content 'Ops... Essa bike já está alugada no dia 2017-04-20 :('
   end
 end

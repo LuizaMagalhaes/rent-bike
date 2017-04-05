@@ -7,7 +7,7 @@ feature 'User register in website' do
       advertisement = create(:advertisement, bike: bike)
 
       visit advertisement_path(advertisement)
-      click_on 'Alugar Bike'
+      click_on 'Alugar'
 
       fill_in 'Email', with: customer.email
       fill_in 'Senha', with: customer.password

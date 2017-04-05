@@ -1,6 +1,6 @@
 <h3>Realize o cadastro abaixo para confimar o aluguel da bike</h3>
 
-<%= form_for [@advertisement, @rent] do |f| %>
+<%= form_for([@advertisement, @rent], url: checkout_advertisement_path(@advertisement)) do |f| %>
   <h4>Cliente</h4>
     <div class="form-group">
       <%= f.label :payment, 'Pagamento:' %>
@@ -11,5 +11,5 @@
       <%= f.text_field :rent_date , class: 'form-control' %>
     </div>
 
-  <%= f.submit 'Confirmar Aluguel', class: 'btn btn-primary' %>
+  <%= f.submit 'Alugar Bike', class: 'btn btn-primary' %>
 <% end %>

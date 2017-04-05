@@ -1,0 +1,37 @@
+<h1>Detalhes do aluguel </h1>
+<h2> Seus dados: </h2>
+<div>
+  <dl class="dl-horizontal">
+    <dt>Nome: </dt><dd><%= @rent.customer.name%></dd>
+    <dt>Telefone: </dt><dd><%= @rent.customer.phone%></dd>
+    <dt>CPF: </dt><dd><%= @rent.customer.cpf%></dd>
+    <dt>Email: </dt><dd><%= @rent.customer.email%></dd>
+    <dt>Modo de pagamento: </dt><dd><%= @rent.payment%></dd>
+  </dl>
+</div>
+
+<h2><%= @advertisement.title %></h2>
+
+<h2>Dados da bike: </h2>
+<div>
+  <dl class="dl-horizontal">
+    <dt>Endereço</dt>
+    <dd><%= @advertisement.address %></dd>
+    <dt>Principal uso</dt>
+    <dd><%= @advertisement.bike.use_for %></dd>
+    <dt> Dono(a)</dt>
+    <dd><%= @advertisement.owner %></dd>
+    <dt>Contato</dt>
+    <dd><%= @advertisement.phone %></dd>
+    <dt>Preço</dt>
+    <dd><%= number_to_currency @advertisement.price %></dd>
+    <dt>Data do aluguel</dt>
+    <dd><%= l(@rent.rent_date) %></dd>
+  </dl>
+</div>
+
+<%= form_for([@advertisement, @rent]) do |f| %>
+  <%= f.hidden_field :payment, value: @rent.payment %>
+  <%= f.hidden_field :rent_date, value: @rent.rent_date %>
+  <%= f.submit "Confirmar aluguel", class: " col-md-3 btn btn-primary btn-md" %>
+<% end %>

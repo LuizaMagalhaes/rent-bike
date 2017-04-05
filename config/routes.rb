@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :advertisements, only: [:show] do
     resources :bikes, only: [:show]
     resources :rents, only: [:new, :create, :show]
+
+    post 'checkout', to: 'rents#checkout', as: 'checkout', on: :member
   end
 
   get 'history', to: 'rents#history', as: 'history'
